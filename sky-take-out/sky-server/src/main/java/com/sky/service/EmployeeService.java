@@ -4,12 +4,10 @@ import com.sky.dto.EmployeeLoginDTO;
 import com.sky.entity.Employee;
 
 public interface EmployeeService {
-
     /**
      * 员工登录
      * @param employeeLoginDTO
-     * @return
+     * @return employee
      */
     Employee login(EmployeeLoginDTO employeeLoginDTO);
-
 }
