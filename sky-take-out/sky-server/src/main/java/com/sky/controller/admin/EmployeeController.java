@@ -79,6 +79,7 @@ public class EmployeeController {
 
     /**
      * 新增员工
+     *
      * @param employeeDTO
      * @return
      */
@@ -94,6 +95,7 @@ public class EmployeeController {
 
     /**
      * 分页查询
+     *
      * @param employeePageQueryDTO
      * @return
      */
@@ -103,5 +105,22 @@ public class EmployeeController {
         log.info("分页查询员工：{}", employeePageQueryDTO);
         PageResult pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
+    }
+
+    /**
+     * 修改员工账号状态
+     *
+     * @param status
+     * @param id
+     * @return
+     */
+    // 这里应该是PutMapping，但是前端传的参数是post，所以这里用PostMapping
+    @PostMapping("/status/{status}")
+    @ApiOperation("修改员工账号状态")
+    public Result<String> updateStatus(@PathVariable Integer status, Long id) {
+        log.info("修改员工账号状态：id={},status={}", status, id);
+        employeeService.updateStatus(status, id);
+        String msg = "修改成功";
+        return Result.success(msg);
     }
 }
