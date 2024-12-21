@@ -14,6 +14,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- 用于处理JSON数据。它提供了将Java对象转换为JSON和将JSON转换为Java对象的功能 -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
