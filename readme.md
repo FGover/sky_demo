@@ -1,4 +1,10 @@
 ## 笔记
+### 依赖管理
+![image](https://github.com/user-attachments/assets/19fa0154-6534-4839-9bfa-4f64b462ebb6)
+
+
+
+
 ![image](https://github.com/user-attachments/assets/16b1fae4-6481-475d-994b-6560cda62a9a)
 
 **entity是实体类  
