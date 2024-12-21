@@ -9,6 +9,7 @@ import com.sky.result.PageResult;
 public interface EmployeeService {
     /**
      * 员工登录
+     *
      * @param employeeLoginDTO
      * @return employee
      */
@@ -16,12 +17,14 @@ public interface EmployeeService {
 
     /**
      * 新增员工
+     *
      * @param employeeDTO
      */
     void addEmployee(EmployeeDTO employeeDTO);
 
     /**
      * 分页查询员工
+     *
      * @param employeePageQueryDTO
      * @return PageResult
      */
@@ -29,8 +32,24 @@ public interface EmployeeService {
 
     /**
      * 禁用启用员工账号
+     *
      * @param status
      * @param id
      */
     void updateStatus(Integer status, Long id);
+
+    /**
+     * 根据id查询员工
+     *
+     * @param id
+     * @return employee
+     */
+    EmployeeDTO getById(Long id);
+
+    /**
+     * 修改员工信息
+     *
+     * @param employeeDTO
+     */
+    void updateEmployee(EmployeeDTO employeeDTO);
 }
