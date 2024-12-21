@@ -1,10 +1,13 @@
 ## 笔记
 ### 依赖管理
+**server模块**  
 ![image](https://github.com/user-attachments/assets/19fa0154-6534-4839-9bfa-4f64b462ebb6)
+![image](https://github.com/user-attachments/assets/0369aab3-e7fc-4ae7-bd01-2125485316f7)
 
+**Pojo模块**  
+![image](https://github.com/user-attachments/assets/a41b256e-9d57-4cb8-8442-f1c980931711)  
 
-
-
+ 
 ![image](https://github.com/user-attachments/assets/16b1fae4-6481-475d-994b-6560cda62a9a)
 
 **entity是实体类  
