@@ -19,8 +19,12 @@ VO是后端返回给前端的对象**
 **通过BaseContext.getCurrentId()获取当前员工id**  
 ![image](https://github.com/user-attachments/assets/3fc43cd6-d4f5-4f69-9bb4-0bba5cd6a428)
 
-### 公共字段自动填充  
+### 数据库表公共字段自动填充  
 ![image](https://github.com/user-attachments/assets/03e2855e-2c32-47db-9c39-0ac9a8faa1e6)  
+（1）自定义注解AutoFill，用于标识需要进行公共字段自动填充的方法  
+（2）自定义切面类AutoFillAspect，同意拦截加入了AutoFill注解的方法，通过反射为公共字段赋值
+（3）在Mapper的方法上加入AutoFill注解，即可实现公共字段的自动填充
+
 
 
 
