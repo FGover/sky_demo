@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -64,5 +66,10 @@ public class CategoryServiceImpl implements CategoryService {
 //        category.setUpdateTime(LocalDateTime.now());
 //        category.setUpdateUser(BaseContext.getCurrentId());
         categoryMapper.updateCategory(category);
+    }
+
+    @Override
+    public List<Category> selectByType(Integer type) {
+        return categoryMapper.selectByType(type);
     }
 }
