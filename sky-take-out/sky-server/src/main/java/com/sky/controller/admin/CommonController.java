@@ -25,7 +25,7 @@ public class CommonController {
     private AliOssUtil aliOssUtil;
 
     /**
-     * 文件上传
+     * 上传图片
      *
      * @param file
      * @return

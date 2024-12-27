@@ -66,6 +66,7 @@ public class DishServiceImpl implements DishService {
     @Override
     public PageResult selectPage(DishPageQueryDTO dishPageQueryDTO) {
         PageHelper.startPage(dishPageQueryDTO.getPage(), dishPageQueryDTO.getPageSize());
+        // 当前页数据
         Page<DishVO> page = dishMapper.selectPage(dishPageQueryDTO);
         return new PageResult(page.getTotal(), page.getResult());
     }
