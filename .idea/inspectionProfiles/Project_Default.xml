@@ -2,7 +2,106 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="AutoCloseableResource" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="METHOD_MATCHER_CONFIG" value="java.util.Formatter,format,java.io.Writer,append,com.google.common.base.Preconditions,checkNotNull,org.hibernate.Session,close,java.io.PrintWriter,printf,java.io.PrintStream,printf,java.lang.foreign.Arena,ofAuto,java.lang.foreign.Arena,global,com.github.pagehelper.page.PageMethod,startPage,com.sky.mapper.EmployeeMapper,pageQuery,com.sky.mapper.CategoryMapper,selectPage,com.sky.mapper.DishMapper,selectPage" />
+      <option name="METHOD_MATCHER_CONFIG" value="java.util.Formatter,format,java.io.Writer,append,com.google.common.base.Preconditions,checkNotNull,org.hibernate.Session,close,java.io.PrintWriter,printf,java.io.PrintStream,printf,java.lang.foreign.Arena,ofAuto,java.lang.foreign.Arena,global,com.github.pagehelper.page.PageMethod,startPage,com.sky.mapper.EmployeeMapper,pageQuery,com.sky.mapper.CategoryMapper,selectPage,com.sky.mapper.DishMapper,selectPage,com.sky.mapper.SetMealMapper,selectPage" />
+    </inspection_tool>
+    <inspection_tool class="VulnerableLibrariesLocal" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="isIgnoringEnabled" value="true" />
+      <option name="ignoredModules">
+        <list>
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+          <option value="sky-server" />
+        </list>
+      </option>
+      <option name="ignoredPackages">
+        <list>
+          <option value="com.fasterxml.jackson.core:jackson-databind:2.13.3" />
+          <option value="org.codehaus.jettison:jettison:1.1" />
+          <option value="org.springframework:spring-web:5.3.22" />
+          <option value="io.lettuce:lettuce-core:6.1.9.RELEASE" />
+          <option value="com.google.guava:guava:27.0.1-android" />
+          <option value="io.github.classgraph:classgraph:4.8.83" />
+          <option value="io.netty:netty-common:4.1.79.Final" />
+          <option value="io.netty:netty-handler:4.1.79.Final" />
+          <option value="com.github.pagehelper:pagehelper:5.2.0" />
+          <option value="com.alibaba:fastjson:1.2.76" />
+          <option value="org.springframework:spring-jdbc:5.3.22" />
+          <option value="mysql:mysql-connector-java:8.0.30" />
+          <option value="com.jayway.jsonpath:json-path:2.7.0" />
+          <option value="org.apache.tomcat.embed:tomcat-embed-core:9.0.65" />
+          <option value="net.minidev:json-smart:2.4.8" />
+          <option value="org.apache.tomcat.embed:tomcat-embed-websocket:9.0.65" />
+          <option value="org.springframework:spring-webmvc:5.3.22" />
+          <option value="ch.qos.logback:logback-classic:1.2.11" />
+          <option value="ch.qos.logback:logback-core:1.2.11" />
+          <option value="org.springframework.boot:spring-boot-autoconfigure:2.7.3" />
+          <option value="org.xmlunit:xmlunit-core:2.9.0" />
+          <option value="org.springframework:spring-beans:5.3.22" />
+          <option value="org.springframework:spring-context:5.3.22" />
+          <option value="org.springframework:spring-core:5.3.22" />
+          <option value="org.springframework:spring-expression:5.3.22" />
+          <option value="org.yaml:snakeyaml:1.30" />
+          <option value="org.apache.xmlbeans:xmlbeans:2.6.0" />
+          <option value="org.apache.poi:poi:3.16" />
+        </list>
+      </option>
+      <option name="ignoredReasons">
+        <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+        </list>
+      </option>
     </inspection_tool>
   </profile>
 </component>

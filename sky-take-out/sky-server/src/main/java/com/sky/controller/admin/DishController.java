@@ -77,4 +77,11 @@ public class DishController {
         String msg = "修改成功";
         return Result.success(msg);
     }
+
+    @GetMapping("/list")
+    public Result<List<Dish>> selectByCategoryId(Long categoryId) {
+        log.info("根据分类id查询菜品:{}", categoryId);
+        List<Dish> dishes = dishService.selectByCategoryId(categoryId);
+        return Result.success(dishes);
+    }
 }

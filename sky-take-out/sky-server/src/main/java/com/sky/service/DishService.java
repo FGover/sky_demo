@@ -3,6 +3,7 @@ package com.sky.service;
 import com.sky.annotation.AutoFill;
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
+import com.sky.entity.Dish;
 import com.sky.enumeration.OperationType;
 import com.sky.result.PageResult;
 import com.sky.vo.DishVO;
@@ -54,4 +55,12 @@ public interface DishService {
      * @param status
      */
     void updateDishStatus(Long id, Integer status);
+
+    /**
+     * 根据分类id查询对应菜品
+     *
+     * @param categoryId
+     * @return
+     */
+    List<Dish> selectByCategoryId(Long categoryId);
 }
