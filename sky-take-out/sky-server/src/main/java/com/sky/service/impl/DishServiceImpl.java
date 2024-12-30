@@ -20,6 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -159,9 +161,36 @@ public class DishServiceImpl implements DishService {
         dishMapper.updateDish(dish);
     }
 
+    /**
+     * 根据菜品分类id查询菜品
+     *
+     * @param categoryId
+     * @return
+     */
     @Override
     public List<Dish> selectByCategoryId(Long categoryId) {
         return dishMapper.selectByCategoryId(categoryId);
+    }
+
+    /**
+     * 条件查询菜品和口味
+     *
+     * @param dish
+     * @return
+     */
+    @Override
+    public List<DishVO> selectDishWithFlavor(Dish dish) {
+        List<Dish> disheList = dishMapper.selectDish(dish);
+        List<DishVO> dishVOList = new ArrayList<>();
+        for (Dish d : disheList) {
+            DishVO dishVO = new DishVO();
+            BeanUtils.copyProperties(d, dishVO);
+            // 查询口味
+            List<DishFlavor> flavors = dishFlavorMapper.selectByDishId(d.getId());
+            dishVO.setFlavors(flavors);
+            dishVOList.add(dishVO);
+        }
+        return dishVOList;
     }
 
 }
