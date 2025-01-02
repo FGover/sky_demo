@@ -12,9 +12,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController("adminDishController")
 @RequestMapping("/admin/dish")
@@ -25,12 +27,27 @@ public class DishController {
     @Autowired
     private DishService dishService;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    /**
+     * 删除redis中的菜品缓存
+     * @param pattern
+     */
+    private void CleanCache(String pattern) {
+        Set keys = redisTemplate.keys(pattern);
+        redisTemplate.delete(keys);
+    }
+
     @PostMapping
     @ApiOperation("新增菜品")
     public Result<String> addDish(@RequestBody DishDTO dishDTO) {
         log.info("新增菜品:{}", dishDTO);
         dishService.addDish(dishDTO);
         String msg = "添加菜品成功";
+        // 删除redis中的菜品缓存（新增，只对改变的那个分类缓存清除）
+        String key = "dish_" + dishDTO.getCategoryId();
+        CleanCache(key);
         return Result.success(msg);
     }
 
@@ -48,6 +65,8 @@ public class DishController {
         log.info("删除菜品:{}", ids);
         dishService.deleteDish(ids);
         String msg = "删除成功";
+        // 删除redis中的菜品缓存（全部删除）
+        CleanCache("dish_*");
         return Result.success(msg);
     }
 
@@ -66,6 +85,8 @@ public class DishController {
         log.info("修改菜品:{}", dishDTO);
         dishService.updateDish(dishDTO);
         String msg = "修改成功";
+        // 删除redis中的菜品缓存（全部删除）
+        CleanCache("dish_*");
         return Result.success(msg);
     }
 
@@ -75,6 +96,8 @@ public class DishController {
         log.info("修改菜品状态:{}", id);
         dishService.updateDishStatus(id, status);
         String msg = "修改成功";
+        // 删除redis中的菜品缓存（全部删除）
+        CleanCache("dish_*");
         return Result.success(msg);
     }
 
