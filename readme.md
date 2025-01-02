@@ -26,7 +26,7 @@ VO是后端返回给前端的对象**
 （3）在Mapper的方法上加入AutoFill注解，即可实现公共字段的自动填充
 
 ### 防止用户端频繁请求数据库，使用redis缓存菜品  
-![image](https://github.com/user-attachments/assets/993a2e19-f9d0-4fe1-b264-0e71bf7e5785)  
+![image](https://github.com/user-attachments/assets/db1356fb-817c-4162-920b-24c894b25ea4)  
 使用Spring Cache 框架来实现基于注解的缓存功能
 Spring Cache 提供了一层抽象，底层可以切换不同的缓存实现  
 @EnableCaching：开启缓存注解功能，通常加在启动类上   
