@@ -17,6 +17,15 @@ public interface UserMapper {
     User selectByOpenId(String openId);
 
     /**
+     * 根据id查询用户
+     *
+     * @param id
+     * @return
+     */
+    @Select("select * from user where id = #{id}")
+    User selectById(Long id);
+
+    /**
      * 新增用户
      *
      * @param user

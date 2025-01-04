@@ -37,8 +37,10 @@ public class AddressBookServiceImpl implements AddressBookService {
     public void updateDefault(AddressBook addressBook) {
         Long userId = BaseContext.getCurrentId();
         AddressBook address = addressBookMapper.selectDefault(userId);
-        address.setIsDefault(0);
-        addressBookMapper.updateAddress(address);
+        if(address != null) {
+            address.setIsDefault(0);
+            addressBookMapper.updateAddress(address);
+        }
         addressBook.setIsDefault(1);
         addressBookMapper.updateAddress(addressBook);
     }
