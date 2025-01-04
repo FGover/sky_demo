@@ -35,6 +35,7 @@ Spring Cache 提供了一层抽象，底层可以切换不同的缓存实现
 @CacheEvict：将一条或多条数据从缓存中删除  
 
 
+![image](https://github.com/user-attachments/assets/a6c041f4-2a51-4742-966e-0139eacab7c1)
 
 
 
