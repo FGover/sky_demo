@@ -54,11 +54,16 @@ Spring Task 是 Spring 框架提供的任务调度工具，可以按照约定的
 ### WebSocket  
 WebSocket 是基于TCP的一种新的网络协议。它实现了浏览器与服务器全双工通信 ---- 浏览器和服务器只需要完成一次握手，两者之间就可以创建持久性的连接，并进行双向数据传输。  
 
-![image](https://github.com/user-attachments/assets/768d12ab-ecea-4199-9359-ef4809a542b1)
+![image](https://github.com/user-attachments/assets/768d12ab-ecea-4199-9359-ef4809a542b1)  
 
 
-
-
+```xml
+<!-- 添加依赖 -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+```
 
 
 
