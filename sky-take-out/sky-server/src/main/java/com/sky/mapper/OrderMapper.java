@@ -73,6 +73,7 @@ public interface OrderMapper {
     @Select("select count(id) from orders where status = #{status}")
     Integer countStatus(Integer status);
 
+
     /**
      * 根据条件营业订单金额统计
      *
@@ -80,6 +81,14 @@ public interface OrderMapper {
      * @return
      */
     Double sumByMap(Map<String, Object> map);
+
+    /**
+     * 平均客单价
+     *
+     * @param map
+     * @return
+     */
+    Double AverageAmount(Map<String, Object> map);
 
     /**
      * 根据条件统计订单数量
@@ -97,4 +106,20 @@ public interface OrderMapper {
      * @return
      */
     List<GoodsSalesDTO> getTop10(LocalDateTime begin, LocalDateTime end);
+
+    /**
+     * 根据状态查询订单数量
+     *
+     * @param status
+     * @return
+     */
+    Integer getOrderByStatus(Integer status);
+
+    /**
+     * 获取全部订单数量
+     *
+     * @return
+     */
+    @Select("select count(id) from orders")
+    Integer getAllOrder();
 }

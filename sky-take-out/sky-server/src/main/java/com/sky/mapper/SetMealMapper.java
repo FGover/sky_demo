@@ -67,7 +67,22 @@ public interface SetMealMapper {
     @Select("select * from setmeal where category_id = #{categoryId} and status = #{status}")
     List<Setmeal> selectByCategoryId(Setmeal setmeal);
 
+    /**
+     * 根据套餐id查询菜品项
+     *
+     * @param setMealId
+     * @return
+     */
     @Select("select sd.name, sd.copies, d.image, d.description from setmeal_dish sd left join " +
             "dish d on sd.dish_id = d.id where sd.setmeal_id = #{setMealId}")
     List<DishItemVO> getDishItemBySetMealId(Long setMealId);
+
+    /**
+     * 查询套餐的销量
+     *
+     * @param status
+     * @return
+     */
+    @Select("select count(id) from setmeal where status = #{status}")
+    Integer getSoldCount(Integer status);
 }
