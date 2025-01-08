@@ -83,14 +83,6 @@ public interface OrderMapper {
     Double sumByMap(Map<String, Object> map);
 
     /**
-     * 平均客单价
-     *
-     * @param map
-     * @return
-     */
-    Double AverageAmount(Map<String, Object> map);
-
-    /**
      * 根据条件统计订单数量
      *
      * @param map

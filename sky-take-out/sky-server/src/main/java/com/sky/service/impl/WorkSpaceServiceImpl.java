@@ -1,6 +1,5 @@
 package com.sky.service.impl;
 
-import com.sky.constant.MessageConstant;
 import com.sky.constant.StatusConstant;
 import com.sky.entity.Orders;
 import com.sky.mapper.DishMapper;
@@ -28,8 +27,10 @@ public class WorkSpaceServiceImpl implements WorkSpaceService {
 
     @Autowired
     private UserMapper userMapper;
+
     @Autowired
     private DishMapper dishMapper;
+
     @Autowired
     private SetMealMapper setMealMapper;
 
@@ -39,15 +40,13 @@ public class WorkSpaceServiceImpl implements WorkSpaceService {
      * @return
      */
     @Override
-    public BusinessDataVO getBusinessData() {
-        // 获取今日时间
-        LocalDateTime beginTime = LocalDateTime.now().with(LocalTime.MIN);
-        LocalDateTime endTime = LocalDateTime.now().with(LocalTime.MAX);
+    public BusinessDataVO getBusinessData(LocalDateTime begin, LocalDateTime end) {
         Map<String, Object> map = new HashMap<>();
-        map.put("begin", beginTime);
-        map.put("end", endTime);
+        map.put("begin", begin);
+        map.put("end", end);
         // 获取今日营业额
         Double turnover = orderMapper.sumByMap(map);
+        turnover = turnover == null ? 0.0 : turnover;
         // 获取今日全部订单
         Integer orderTotal = orderMapper.getOrderCount(map);
         // 新增用户数
@@ -56,9 +55,13 @@ public class WorkSpaceServiceImpl implements WorkSpaceService {
         map.put("status", Orders.COMPLETED);
         Integer validOrderCount = orderMapper.getOrderCount(map);
         // 订单完成率
-        Double orderCompletionRate = validOrderCount * 1.0 / orderTotal;
+        double orderCompletionRate = 0.0;
         // 平均客单价
-        Double unitPrice = orderMapper.AverageAmount(map);
+        double unitPrice = 0.0;
+        if (validOrderCount != 0 && orderTotal != 0) {
+            orderCompletionRate = validOrderCount * 1.0 / orderTotal;
+            unitPrice = turnover / validOrderCount;
+        }
         return BusinessDataVO.builder()
                 .turnover(turnover)
                 .validOrderCount(validOrderCount)
