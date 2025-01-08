@@ -65,6 +65,19 @@ WebSocket 是基于TCP的一种新的网络协议。它实现了浏览器与服�
 </dependency>
 ```
 
-
+### Apache POI  
+Apache POI 是一个处理 Microsoft Office各种文件格式的开源项目。可以使用POI在Java程序中对各种文件进行读写操作。  
+一般情况下，POI 都是用于操作Excel文件。  
+```xml
+<!-- 添加依赖 -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+</dependency>
+```  
 
 
